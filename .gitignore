@@ -1,0 +1,9 @@
+# project files
+.vscode
+Copy-SOC.ps1
+Dev-Notes.md
+Release.ps1
+SOC_VANILLA_MINI_REPACK_ALT_BALLISTICS.code-workspace
+Unset-Read-Only.ps1
+
+# debugging files
