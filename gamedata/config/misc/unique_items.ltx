@@ -120,11 +120,11 @@ $spawn              			= "weapons\uniq\wpn_abakan_m1"
 description						= enc_weapons1_wpn-abakan_m1
 inv_name	        			= wpn-abakan_m1
 inv_name_short					= wpn-abakan_m1
-fire_dispersion_base			= 0.12
+fire_dispersion_base			= 0.49;0.12
 scope_status					= 1
 scope_zoom_factor				= 20
 scope_texture					= wpn\wpn_crosshair
-condition_shot_dec 				= 0.0001
+condition_shot_dec 				= 0.0002;0.0001
 inv_grid_x						= 0
 inv_grid_y						= 20
 
@@ -353,8 +353,8 @@ description						= enc_weapons1_wpn-abakan_m2
 inv_name	        			= wpn-abakan_m2
 inv_name_short					= wpn-abakan_m2
 grenade_launcher_status			= 1
-grenade_vel						= 76
-condition_shot_dec 				= 0.00003
+grenade_vel						= 76.5;76
+condition_shot_dec 				= 0.00014;0.00003
 inv_grid_x						= 0
 inv_grid_y						= 28
 ; to fix zoomed aim (sans scope), need custom hud
@@ -417,7 +417,7 @@ zoom_offset			= -0.110600,0.059200,-0.009000
 zoom_rotate_x		= 0.009500
 zoom_rotate_y		= -0.000500
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
 
 
 ; same as above, but for attached grenade launcher for
