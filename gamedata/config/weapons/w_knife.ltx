@@ -39,23 +39,24 @@ cost						= 70
 
 hand_dependence		     	= 1
 
-cam_relax_speed          	= 5.0
-cam_dispersion           	= 0.9
-cam_max_angle		     	= 7
-cam_max_angle_horz			= 5.0
-cam_step_angle_horz			= 0.5
+cam_relax_speed          	= 8;5.0
+cam_dispersion           	= 0.65;0.9
+cam_max_angle		     	= 20;7
+cam_max_angle_horz			= 10;5.0
+cam_step_angle_horz			= 0.9;0.5
 
 
 fire_dispersion          	= 0.5
 fire_dispersion_add      	= 5.3
 fire_dispersion_relax    	= 0.6
 fire_dispersion_base	 	= 0.5
+control_inertion_factor			= 1.0
 disp_vel_factor		     	= 0.9
 disp_crouch_factor	     	= 0.75
 disp_jump_factor	     	= 7
 fire_dispersion_condition_factor = 0.0
 misfire_probability 		= 0.0
-condition_shot_dec 			= 0.0
+condition_shot_dec 			= 0.0013;0.0
 
 direction                	= 0, 0, 1
 shell_point		         	= 0.0, 0.0, 0.0
@@ -66,18 +67,21 @@ flame_particles			 	=
 rpm_empty_click 	     	= 200
 
 ; ttc	
-hit_power                	= 1.80, 2.00, 2.20, 2.40
-hit_impulse		         	= 120
+hit_power                	= 2.40;1.80, 2.00, 2.20, 2.40
+hit_impulse		         	= 10;120
 hit_type				 	= wound
 
-hit_power_2                	= 1.80, 2.00, 2.20, 2.40
-hit_impulse_2	         	= 120
-hit_type_2				 	= wound_2
+hit_power_2                	= 2.40;1.80, 2.00, 2.20, 2.40
+hit_impulse_2	         	= 50;120
+hit_type_2				 	= wound;wound_2
 
-fire_distance            	= 1.6;1.8
+fire_distance            	= 1.8;1.6
 bullet_speed			 	= 1000;500			;начальная скорость пули
 rpm                      	= 1000;600
 ; end ttc
+
+use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
+time_to_aim					= 1.0	
 
 normal                   	= 0, 1, 0
 ; jrmy - fix 3rd person position
@@ -92,14 +96,14 @@ light_disabled				= true
 
 ph_mass			         	= 4
 
-ammo_limit		         	= 180
-ammo_current		     	= 90
+;ammo_limit		         	= 180
+;ammo_current		     	= 90
 ammo_elapsed		     	= 0
 	
 ammo_mag_size		     	= 0
-ammo_class				 	= ammo_9x39_pab9
+ammo_class				 	= ammo_9x19_fmj;ammo_9x39_pab9
 	
-min_radius               	= 50
+min_radius               	= 0;50
 max_radius               	= 50
 
 scope_status				= 0
