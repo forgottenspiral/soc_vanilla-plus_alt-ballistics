@@ -20,13 +20,13 @@ holder_fov_modifier		= 1.0            ; во сколько раз увеличивается eye_fov
 
 cost					 	= 350
 
-ammo_limit		 			= 120
-ammo_current		 		= 90
+;ammo_limit		 			= 120
+;ammo_current		 		= 90
 ammo_elapsed		 		= 12
 
 ammo_mag_size		 		= 12
 ammo_class		 			= ammo_9x18_fmj, ammo_9x18_pmm
-
+fire_modes		 			= 1
 
 hand_dependence		 		= 1
 single_handed				= 1
@@ -51,21 +51,23 @@ kill_msg_height		= 21
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.37  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 0.8;0.37  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor			= 1.0f
 
 ;отдача
-cam_relax_speed         	= 10;	;скорость возврата в исходное положение
-cam_dispersion          	= 0.35	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.0	;увеличениe cam_dispersion с каждым выстрелом
+cam_relax_speed         	= 8;10;	;скорость возврата в исходное положение
+cam_relax_speed_ai         	= 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.6;0.35	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.6;0.0	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispertion_frac		= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle			= 20.0	;максимальный угол отдачи
-cam_max_angle_horz		= 10.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz		= 0.7	;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle			= 5;20.0	;максимальный угол отдачи
+cam_max_angle_horz		= 5;10.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 1;0.7	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 		= 0.003	;вероятность осечки при максимальном износе
+misfire_probability 		= 0.025;0.003	;вероятность осечки при максимальном износе
 misfire_condition_k			= 0.05 
-condition_shot_dec 			= 0.0003 ;увеличение износа при каждом выстреле
+condition_shot_dec 			= 0.0008;0.0003 ;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
 
 direction                	= 0, 0, 1
@@ -73,35 +75,35 @@ fire_point               	= 0.0, 0.148, 0.157
 
 flame_particles		   		= weapons\generic_weapon03
 smoke_particles		   		= weapons\generic_shoot_00
-rpm_empty_click 	 		= 200
+;rpm_empty_click 	 		= 200
 
 shell_point		 			= 0.05, 0.148, 0.053
 shell_dir		 			= 0.0, 0.0, 0.4
 shell_particles	 			= weapons\generic_shells
 
 PDM_disp_base 			= 1.0
-PDM_disp_vel_factor 		= 0.6
-PDM_disp_accel_factor 		= 0.6
+PDM_disp_vel_factor 		= 0.3;0.6
+PDM_disp_accel_factor 		= 0.3;0.6
 PDM_crouch	 		= 1.0
 PDM_crouch_no_acc 		= 1.0
 
 ; ttc
-hit_power           = 0.31, 0.35, 0.38, 0.41
-hit_impulse		 	= 110
+hit_power           = 0.35;0.31, 0.35, 0.38, 0.41
+hit_impulse		 	= 1;110
 hit_type 			= fire_wound
 
-fire_distance       = 50 ;1000
-bullet_speed		= 300	;начальная скорость пули
-rpm                 = 300
+fire_distance       = 700;50 ;1000
+bullet_speed		= 320;300	;начальная скорость пули
+rpm                 = 250;300
 ; end ttc
 
 use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
 time_to_aim					= 1.0	
 
-silencer_hit_power       	= 0.32
-silencer_hit_impulse	 	= 90
-silencer_fire_distance   	= 100
-silencer_bullet_speed	 	= 220
+silencer_hit_power       	= 0.35;0.32
+silencer_hit_impulse	 	= 1;90
+silencer_fire_distance   	= 700;100
+silencer_bullet_speed	 	= 320;220
 
 hud                      	= wpn_fort_hud
 normal                   	= 0, 1, 0
@@ -114,7 +116,7 @@ orientation              	= 0, 0, 0
 ;strap_bone0					= bip01_spine2
 ;strap_bone1					= bip01_spine1
 
-startup_ammo             	= 90
+;startup_ammo             	= 90
 visual                   	= weapons\fort\wpn_fort.ogf
 
 light_color		 			= 0.6,0.5,0.3
@@ -123,7 +125,7 @@ light_var_color		 		= 0.05
 light_var_range		 		= 0.5
 light_time 		 			= 0.2
 
-ph_mass			 			= 1
+ph_mass			 			= 0.83;1
 ;cost			 			= 350
 
 ;addons
@@ -132,7 +134,7 @@ silencer_status				= 2
 grenade_launcher_status		= 0
 
 zoom_enabled				= true
-scope_zoom_factor	    	= 55
+scope_zoom_factor	    	= 75;55
 
 ;звуки
 snd_draw					= weapons\fort_draw
@@ -190,4 +192,4 @@ zoom_offset			= -0.098000,0.076700,-0.011500
 zoom_rotate_x		= -0.002400
 zoom_rotate_y		= 0.000000
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
