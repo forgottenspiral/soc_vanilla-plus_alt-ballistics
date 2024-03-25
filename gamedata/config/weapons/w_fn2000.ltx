@@ -21,8 +21,8 @@ holder_fov_modifier		= 0.3              ; во сколько раз увеличивается eye_fov
 cost					 = 17000
 weapon_class			 = assault_rifle
 
-ammo_limit		         = 180
-ammo_current		     = 90
+;ammo_limit		         = 180
+;ammo_current		     = 90
 ammo_elapsed		     = 30
 
 ammo_mag_size		     = 30
@@ -31,7 +31,7 @@ hand_dependence		     = 1
 single_handed			 = 0
 
 ammo_class		         = ammo_5.56x45_ss190, ammo_5.56x45_ap
-fire_modes					= 1, -1
+fire_modes					= 1, 3, -1;1, -1
 launch_speed			= 0
 
 slot 			         = 2		; // secondary
@@ -39,7 +39,7 @@ animation_slot			 = 2		; type of the animation that will be used
 
 inv_name		         = wpn-fn2000
 inv_name_short		     = wpn-fn2000
-inv_weight		         = 4.6
+inv_weight		         = 3.6;4.6
 
 inv_grid_width				= 4
 inv_grid_height				= 2
@@ -53,20 +53,21 @@ kill_msg_height				= 30
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.2 	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor		= 1.15f
+fire_dispersion_base		= 0.6;0.2 	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor		= 1.2f;1.15f
 
 ;отдача
-cam_relax_speed         	= 5.6		;скорость возврата в исходное положение
-cam_dispersion          	= 0.2	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc			= 0.1	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispertion_frac			= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle				= 8.5	;максимальный угол отдачи
-cam_max_angle_horz			= 9.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz			= 0.6	;(degree) size of step camera moved in horizontal position while shooting
+cam_relax_speed         	= 5;5.6		;скорость возврата в исходное положение
+cam_relax_speed_ai         	= 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.5;0.2	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.5;0.1	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 0.7;1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle				= 10;8.5	;максимальный угол отдачи
+cam_max_angle_horz			= 10;9.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 1;0.6	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 		= 0.005	;вероятность осечки при максимальном износе
+misfire_probability 		= 0.007;0.005	;вероятность осечки при максимальном износе
 misfire_condition_k			= 0.05 
 condition_shot_dec 			= 0.0002 ;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
@@ -82,26 +83,31 @@ grenade_flame_particles	= weapons\generic_weapon01
 shell_point			= -0.020000,0.186000,0.200000
 shell_dir		 		= 0.0, 1.0, 0.0
 shell_particles	 		= weapons\generic_shells
-rpm_empty_click 	     = 200
+;rpm_empty_click 	     = 200
 
-PDM_disp_base 			= 1.0
-PDM_disp_vel_factor 		= 1.05
-PDM_disp_accel_factor 		= 1.05
+PDM_disp_base 			= 0.7;1.0
+PDM_disp_vel_factor 		= 1.5;1.05
+PDM_disp_accel_factor 		= 1.5;1.05
 PDM_crouch	 		= 1.0
 PDM_crouch_no_acc 		= 1.0
 
 ; ttc
-hit_power          = 0.60, 0.64, 0.67, 0.70
-hit_impulse		   = 105
+hit_power          = 0.7;0.60, 0.64, 0.67, 0.70
+hit_impulse		   = 1;105
 hit_type 		   = fire_wound
 
-fire_distance            	= 400
-bullet_speed			= 925	;начальная скорость пули
-rpm                      	= 860
+fire_distance            	= 1000;400
+bullet_speed			= 900;925	;начальная скорость пули
+rpm                      	= 850;860
 ; end ttc
 
 use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
 time_to_aim					= 1.0	
+
+silencer_hit_power       		= 0.7
+silencer_hit_impulse	 		= 1.0
+silencer_fire_distance   		= 1000
+silencer_bullet_speed	 		= 900
 
 hud                      = wpn_fn2000_hud
 normal                   = 0, 1, 0
@@ -114,7 +120,7 @@ strap_orientation      		= -10,-3,10					; (3rd person view in degrees))
 strap_bone0					= bip01_spine2
 strap_bone1					= bip01_spine1
 
-startup_ammo             = 1000
+;startup_ammo             = 1000
 visual                   = weapons\fn2000\wpn_fn2000_new.ogf
 
 light_color		         = 0.6,0.5,0.3
@@ -124,7 +130,7 @@ light_var_range		     = 0.1
 light_time 		         = 0.2
 
 
-ph_mass			         = 4
+ph_mass			         = 3.6;4
 ;cost			         = 5000
 
 ;addons
@@ -230,4 +236,4 @@ grenade_zoom_offset			= -0.099000,-0.131000,0.000000
 grenade_zoom_rotate_x		= -0.222500
 grenade_zoom_rotate_y		= 0.003500
 
-zoom_hide_crosshair	= true
+;zoom_hide_crosshair	= false
