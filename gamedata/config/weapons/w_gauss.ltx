@@ -22,12 +22,13 @@ holder_fov_modifier		= 0.3              ; во сколько раз увеличивается eye_fov
 cost					= 25000
 weapon_class			= sniper_rifle
 
-ammo_limit				= 60
-ammo_current			= 10
+;ammo_limit				= 60
+;ammo_current			= 10
 ammo_elapsed			= 0
 
 ammo_mag_size			= 10
 ammo_class				= ammo_gauss
+fire_modes				= 1
 
 sprint_allowed			= true
 ;-----------------------------------------------------------------------------------
@@ -37,10 +38,13 @@ control_inertion_factor		= 1.4f
 
 ;отдача
 cam_relax_speed         	= 3;0.05	;скорость возврата в исходное положение
-cam_dispersion          	= 0.05	;увеличения угла (в градусах) с каждым выстрелом
-cam_max_angle			= 4.0	;максимальный угол отдачи
-cam_max_angle_horz		= 5.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz		= 0.5	;(degree) size of step camera moved in horizontal position while shooting
+cam_relax_speed_ai         	= 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.01;0.05	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.01		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 1.0		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle			= 0.01;4.0	;максимальный угол отдачи
+cam_max_angle_horz		= 0.01;5.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 0.01;0.5	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
 misfire_probability 		= 0.0001 ;вероятность осечки при максимальном износе 
@@ -74,17 +78,20 @@ fire_point				= 0.00,0.12,0.69
 flame_particles         = weapons\generic_weapon_gauss
 shell_point		 		= 0.00,0.12,0.174				; position (3rd person view) for shell to throw out
 smoke_particles	 		= weapons\generic_weapon07	; name of the particles for shells
-rpm_empty_click 		= 120
+;rpm_empty_click 		= 120
 
 ; ttc
-hit_power           = 1.10, 1.10, 1.10, 1.60
-hit_impulse		 	= 300
+hit_power           = 2.0;1.10, 1.10, 1.10, 1.60
+hit_impulse		 	= 100;300
 hit_type 			= fire_wound
 
 fire_distance           	= 1000
 bullet_speed		 	= 15000	;начальная скорость пули
-rpm                     	= 30
+rpm                     	= 25;30
 ; end ttc
+
+use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
+time_to_aim					= 1.0	
 
 hud                     = wpn_gauss_hud
 normal                  = 0, 1, 0
@@ -105,7 +112,7 @@ strap_orientation      		= -15,-9,110				; (3rd person view in degrees)
 strap_bone0					= bip01_spine2
 strap_bone1					= bip01_spine1
 
-startup_ammo            = 10
+;startup_ammo            = 10
 visual                  = weapons\gauss\wpn_gauss.ogf
 
 light_color		 		= 1.3,1.5,2
@@ -163,4 +170,4 @@ zoom_offset			= -0.090000,0.040000,0.030000
 zoom_rotate_x		= -0.005000
 zoom_rotate_y		= -0.000000
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
