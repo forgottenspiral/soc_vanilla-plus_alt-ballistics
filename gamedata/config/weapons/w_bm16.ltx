@@ -23,31 +23,33 @@ holder_fov_modifier		= 0.7              ; во сколько раз увеличивается eye_fov
 cost					 	= 400	;1000
 weapon_class			 	= shotgun
 
-ammo_limit		 			= 60
-ammo_current		 		= 10
+;ammo_limit		 			= 60
+;ammo_current		 		= 10
 ammo_elapsed		 		= 0
 
 ammo_mag_size		 		= 2
 ammo_class		 			= ammo_12x70_buck,ammo_12x76_zhekan,ammo_12x76_dart
+fire_modes		 			= 1
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.5  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 1.1;0.5  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 control_inertion_factor		= 1.0f
 
 ;отдача
-cam_relax_speed         	= 7.0	;скорость возврата в исходное положение
-cam_dispersion          	= 4.0	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 4.0	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispertion_frac		= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle			= 8.0	;максимальный угол отдачи
-cam_max_angle_horz		= 20.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz		= 2.5	;(degree) size of step camera moved in horizontal position while shooting
+cam_relax_speed         	= 4;7.0	;скорость возврата в исходное положение
+cam_relax_speed_ai         	= 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 5.5;4.0	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 5.5;4.0	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac		= 0.5;1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle			= 15;8.0	;максимальный угол отдачи
+cam_max_angle_horz		= 15;20.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 5.5;2.5	;(degree) size of step camera moved in horizontal position while shooting
 
-fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 		= 0.003	;вероятность осечки при максимальном износе
-misfire_condition_k			= 0.05 
-condition_shot_dec 			= 0.001 ;увеличение износа при каждом выстреле
+fire_dispersion_condition_factor = 10;5	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 		= 0;0.003	;вероятность осечки при максимальном износе
+misfire_condition_k			= 0;0.05 
+condition_shot_dec 			= 0.003;0.001 ;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
 
 hand_dependence 	 		= 1
@@ -81,13 +83,13 @@ smoke_particles		   		= weapons\generic_shoot_00
 rpm_empty_click 	   		= 200
 
 ; ttc
-hit_power        	= 0.75, 0.79, 0.85, 0.90
-hit_impulse      	= 240
+hit_power        	= 1.05;0.75, 0.79, 0.85, 0.90
+hit_impulse      	= 1;240
 hit_type 			= fire_wound
 
-fire_distance       = 50 ;1000
-bullet_speed		= 340	;начальная скорость пули
-rpm                 = 500
+fire_distance       = 400;50 ;1000
+bullet_speed		= 350;340	;начальная скорость пули
+rpm                 = 1000;500
 ; end ttc
 
 PDM_disp_base 			= 1.0
@@ -120,7 +122,7 @@ light_var_color		 		= 0.05
 light_var_range		 		= 0.5
 light_time 		 			= 0.2
 
-ph_mass			 			= 3
+ph_mass			 			= 1.9;3
 ;cost			 			= 900
 
 ;addons
@@ -129,7 +131,7 @@ silencer_status				= 0
 grenade_launcher_status		= 0
 
 zoom_enabled				= true
-scope_zoom_factor	    	= 55
+scope_zoom_factor	    	= 75;55
 
 ;звуки
 snd_draw					= weapons\generic_draw
@@ -174,4 +176,4 @@ zoom_offset			= -0.122,0.065400,0.000000
 zoom_rotate_x		= -0.028700
 zoom_rotate_y		= -0.000750
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
