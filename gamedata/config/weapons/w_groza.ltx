@@ -22,8 +22,8 @@ holder_fov_modifier		= 0.7              ; во сколько раз увеличивается eye_fov
 cost					= 10000
 weapon_class			= assault_rifle
 
-ammo_limit				= 210
-ammo_current			= 180
+;ammo_limit				= 210
+;ammo_current			= 180
 ammo_elapsed			= 20
 
 ammo_mag_size		 	= 20
@@ -41,7 +41,7 @@ animation_slot			= 8		; type of the animation that will be used
 
 inv_name	         	= wpn-groza
 inv_name_short		 	= wpn-groza
-inv_weight		 		= 3.2
+inv_weight		 		= 3.6;3.2
 
 inv_grid_width			= 4
 inv_grid_height			= 2
@@ -55,17 +55,18 @@ kill_msg_height		= 30
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.18	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor		= 1.05f
+fire_dispersion_base		= 0.7;0.18	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor		= 1.2f;1.05f
 
 ;отдача
-cam_relax_speed         	= 5.2;0.3	;скорость возврата в исходное положение
-cam_dispersion          	= 0.3	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.12	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispertion_frac		= 0.75	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle			= 8.5	;максимальный угол отдачи
-cam_max_angle_horz		= 9.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz		= 0.85	;(degree) size of step camera moved in horizontal position while shooting
+cam_relax_speed         	= 10;5.2;0.3	;скорость возврата в исходное положение
+cam_relax_speed_ai         	= 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.6;0.3	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.6;0.12	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac		= 0.7;0.75	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle			= 5;8.5	;максимальный угол отдачи
+cam_max_angle_horz		= 10;9.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 1.7;0.85	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
 misfire_probability 		= 0.003	;вероятность осечки при максимальном износе 
@@ -85,33 +86,33 @@ grenade_flame_particles = weapons\generic_weapon01
 shell_point				= 0.0, 0.194, 0.04
 shell_dir				= 0.0, 0.0, 0.4
 shell_particles			= weapons\generic_shells
-rpm_empty_click 		= 200
+;rpm_empty_click 		= 200
 
 PDM_disp_base 			= 1.0
-PDM_disp_vel_factor 		= 1.1
-PDM_disp_accel_factor 		= 1.1
+PDM_disp_vel_factor 		= 1.5;1.1
+PDM_disp_accel_factor 		= 1.5;1.1
 PDM_crouch	 		= 1.0
 PDM_crouch_no_acc 		= 1.0
 
 ; ttc
-hit_power           = 0.58, 0.62, 0.65, 0.68
-hit_impulse		 	= 150
+hit_power           = 0.72;0.58, 0.62, 0.65, 0.68
+hit_impulse		 	= 1;150
 hit_type 			= fire_wound
 
-fire_distance           	= 400
+fire_distance           	= 1000;400
 bullet_speed			= 310	;начальная скорость пули
-rpm                    		= 750
+rpm                    		= 700;750
 
 use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
-time_to_aim					= 1.0	
+time_to_aim					= 3.0;1.0	
 
 grenade_vel			= 76
 ; end ttc
 
-silencer_hit_power       	= 0.58
-silencer_hit_impulse	 	= 120
-silencer_fire_distance   	= 250
-silencer_bullet_speed	 	= 280
+silencer_hit_power       	= 0.72;0.58
+silencer_hit_impulse	 	= 1;120
+silencer_fire_distance   	= 1000;250
+silencer_bullet_speed	 	= 310;280
 
 hud                     = wpn_groza_hud
 normal                  = 0, 1, 0
@@ -126,7 +127,7 @@ strap_orientation      		= -10,-5,10					; (3rd person view in degrees)
 strap_bone0					= bip01_spine2
 strap_bone1					= bip01_spine1
 
-startup_ammo            = 90
+;startup_ammo            = 90
 visual                  = weapons\groza\wpn_groza.ogf
 
 light_color		 		= 0.6,0.5,0.3
@@ -135,7 +136,7 @@ light_var_color		 	= 0.05
 light_var_range		 	= 0.5
 light_time 		 		= 0.2
 
-ph_mass			 		= 5
+ph_mass			 		= 3.6;5
 ;cost			 		= 2100
 
 ;addons
@@ -144,7 +145,7 @@ silencer_status			= 0;2
 grenade_launcher_status	= 1
 
 zoom_enabled			= true
-scope_zoom_factor	    = 50	;30
+scope_zoom_factor	    = 75;50	;30
 
 scope_name 					= wpn_addon_scope			; section name for the attachable scope
 scope_x 					= 63						; offset in inventory icon
@@ -233,4 +234,4 @@ grenade_zoom_offset			= -0.118800,-0.140600,0.000000
 grenade_zoom_rotate_x		= -0.211200
 grenade_zoom_rotate_y		= 0.000000
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
