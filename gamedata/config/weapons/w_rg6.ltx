@@ -27,28 +27,33 @@ weapon_class			 	= heavy_weapon
 
 tri_state_reload			= on
 
-ammo_limit		 			= 60
-ammo_current		 		= 10
+;ammo_limit		 			= 60
+;ammo_current		 		= 10
 ammo_elapsed		 		= 0
 
 ammo_mag_size		 		= 6
 ammo_class		 			= ammo_vog-25, ammo_vog-25p
-launch_speed				= 76;50 ;for rocket
+fire_modes		 			= 1
+launch_speed				= 73.5;76;50 ;for rocket
 sprint_allowed				= true
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.5  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 1;0.5  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor	= 1.7f
 
 ;отдача
-cam_relax_speed         	= 2.0	;скорость возврата в исходное положение
-cam_dispersion          	= 4.0	;увеличения угла (в градусах) с каждым выстрелом
-cam_max_angle				= 12		;максимальный угол отдачи
+cam_relax_speed         	= 7;2.0	;скорость возврата в исходное положение
+cam_relax_speed_ai        = 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 5.0;4.0	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 5.0		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 0.1		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle				= 15;12		;максимальный угол отдачи
 cam_max_angle_horz			= 5.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz			= 0.5	;(degree) size of step camera moved in horizontal position while shooting
+cam_step_angle_horz			= 5;0.5	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 		= 0.003	    ;вероятность осечки при максимальном износе 
-condition_shot_dec 			= 0.00003	;увеличение износа при каждом выстреле
+misfire_probability 		= 0;0.003	    ;вероятность осечки при максимальном износе 
+condition_shot_dec 			= 0;0.00003	;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
 
 hand_dependence 	 		= 1
@@ -78,23 +83,23 @@ fire_point2              	= 0.0, 0.120, 0.452
 
 flame_particles		   		= weapons\generic_weapon05
 smoke_particles		   		= weapons\generic_shoot_00
-rpm_empty_click 	   		= 200
+;rpm_empty_click 	   		= 200
 ; ttc
 
-hit_power        			= 0.75
-hit_impulse      			= 210
+hit_power        			= 1;0.75
+hit_impulse      			= 1;210
 hit_type 					= fire_wound
 
-fire_distance            	= 100
-bullet_speed			 	= 76			;начальная скорость пули
-rpm                      	= 100
+fire_distance            	= 400;100
+bullet_speed			 	= 73.5;76			;начальная скорость пули
+rpm                      	= 120;100
 ; end ttc
 
 hud                      	= wpn_rg-6_hud
 normal                   	= 0, 1, 0
 position                 	= -0.026, -0.111, 0.
 orientation              	= 0, 0, 0
-startup_ammo             	= 0
+;startup_ammo             	= 0
 visual                   	= weapons\rg-6\wpn_rg-6.ogf
 
 light_color		 			= 0.6,0.5,0.3
@@ -103,7 +108,7 @@ light_var_color		 		= 0.05
 light_var_range		 		= 0.5
 light_time 		 			= 0.2
 
-ph_mass			 			= 3
+ph_mass			 			= 6.2;3
 ;cost			 			= 900
 
 ;addons
@@ -112,7 +117,7 @@ silencer_status				= 0
 grenade_launcher_status		= 0
 
 zoom_enabled				= true
-scope_zoom_factor	    	= 55
+scope_zoom_factor	    	= 75;55
 
 ;звуки
 snd_draw					= weapons\generic_draw
@@ -156,4 +161,4 @@ zoom_rotate_y		= 0.048500
 ;время поворота HUD (сек)
 ;zoom_rotate_time			= 0.7
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
