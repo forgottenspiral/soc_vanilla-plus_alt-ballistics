@@ -28,12 +28,13 @@ holder_fov_modifier		= 0.3              ; во сколько раз увеличивается eye_fov
 cost					 	= 10000
 weapon_class			 	= heavy_weapon
 
-ammo_limit		 			= 120
-ammo_current		 		= 96
+;ammo_limit		 			= 120
+;ammo_current		 		= 96
 ammo_elapsed		 		= 12
 
 ammo_mag_size		 		= 1
 ammo_class		 			= ammo_og-7b
+fire_modes		 			= 1
 
 hand_dependence		 		= 1
 single_handed				= 0
@@ -45,7 +46,7 @@ launch_speed				= 5
 
 inv_name					= wpn-rpg7
 inv_name_short				= wpn-rpg7
-inv_weight					= 6.3
+inv_weight					= 7;6.3
 
 inv_grid_width				= 5
 inv_grid_height				= 1
@@ -59,18 +60,19 @@ kill_msg_height		= 19
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 1.5   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 1.2;1.5   ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 
 ;отдача
 cam_relax_speed         	= 2.0	;скорость возврата в исходное положение
-cam_dispersion          	= 6.0	;увеличения угла (в градусах) с каждым выстрелом
-cam_max_angle				= 8		;максимальный угол отдачи
-cam_max_angle_horz			= 5.0	;(degree) maximum shot horizontal degree 
+cam_relax_speed_ai        = 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 10;6.0	;увеличения угла (в градусах) с каждым выстрелом
+cam_max_angle				= 15;8		;максимальный угол отдачи
+cam_max_angle_horz			= 15;5.0	;(degree) maximum shot horizontal degree 
 cam_step_angle_horz			= 0.5	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 		= 0.0001	;вероятность осечки при максимальном износе 
-condition_shot_dec 			= 0.00003	;увеличение износа при каждом выстреле
+misfire_probability 		= 0;0.0001	;вероятность осечки при максимальном износе 
+condition_shot_dec 			= 0;0.00003	;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
 
 direction                	= 0, 0, 1
@@ -79,16 +81,16 @@ fire_point               	= 0.0, 0.162, 0.35
 
 smoke_particles		   		= weapons\generic_weapon02;generic_rpg_shot
 
-rpm_empty_click 	 		= 200
+;rpm_empty_click 	 		= 200
 
 ; ttc
 ;---------------------------------------------------------------
 hit_power       			= 3.00
-hit_impulse					= 450
+hit_impulse					= 1;450
 hit_type 					= explosion
 
-fire_distance            	= 400
-bullet_speed			 	= 100 ;300			;начальная скорость пули
+fire_distance            	= 920;400
+bullet_speed			 	= 115;100 ;300			;начальная скорость пули
 rpm                      	= 200
 
 
@@ -121,7 +123,7 @@ light_var_color		 		= 0.05
 light_var_range		 		= 0.5
 light_time 		 			= 0.75
 
-ph_mass			 			= 1
+ph_mass			 			= 7;1
 ;cost			 			= 350
 
 ;addons
@@ -177,7 +179,7 @@ zoom_offset					= -0.086700,0.003000,-0.150000
 zoom_rotate_x				= 0.020000
 zoom_rotate_y				= 0.006400
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
 
 [wpn_rpg7_missile]:identity_immunities
 GroupControlSection			= spawn_group
@@ -240,7 +242,7 @@ snd_fly_sound				= weapons\rocket_fly
 ;свойства которые читаются, но не используются (надо убрать)
 inv_name					= "Og-7b"
 inv_name_short				= "Og-7b"
-inv_weight					= .2
+inv_weight					= 0.2
 
 inv_grid_width				= 4
 inv_grid_height				= 1
