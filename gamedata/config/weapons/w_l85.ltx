@@ -25,8 +25,8 @@ cost					= 4000
 weapon_class			= assault_rifle	; Type of the weapon
 launch_speed = 0
 	
-ammo_limit				= 210
-ammo_current			= 180
+;ammo_limit				= 210
+;ammo_current			= 180
 ammo_elapsed			= 30
 	
 ammo_mag_size			= 30
@@ -42,7 +42,7 @@ animation_slot			= 2		; type of the animation that will be used
 
 inv_name	        	= wpn-l85
 inv_name_short			= wpn-l85
-inv_weight				= 5
+inv_weight				= 4.13;5
 
 inv_grid_width			= 5
 inv_grid_height			= 2
@@ -56,27 +56,28 @@ kill_msg_height			= 30
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.25; 0.16	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor		= 1.35f
+fire_dispersion_base		= 0.8;0.25; 0.16	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor		= 1.4f;1.35f
 
 ;отдача
 cam_relax_speed         	= 5; 0.15		;скорость возврата в исходное положение
-cam_dispersion          	= 0.15		;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc			= 0.3		;увеличениe cam_dispersion с каждым выстрелом
-cam_dispertion_frac			= 0.9		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle				= 10.0	    	;максимальный угол отдачи
-cam_max_angle_horz			= 20.0		;(degree) maximum shot horizontal degree 
-cam_step_angle_horz			= 1.0		;(degree) size of step camera moved in horizontal position while shooting
+cam_relax_speed_ai        = 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.4;0.15		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.4;0.3		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 0.7;0.9		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle				= 7;10.0	    	;максимальный угол отдачи
+cam_max_angle_horz			= 7;20.0		;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 2;1.0		;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor 	= 5	    	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 		= 0.003	;вероятность осечки при максимальном износе 
+misfire_probability 		= 0.03;0.003	;вероятность осечки при максимальном износе 
 misfire_condition_k			= 0.05
-condition_shot_dec 			= 0.0002	;увеличение износа при каждом выстреле
+condition_shot_dec 			= 0.0003;0.0002	;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
 ;parent dispersion modifiers
 PDM_disp_base 				= 1.0
-PDM_disp_vel_factor 		= 1.4
-PDM_disp_accel_factor 		= 1.4
+PDM_disp_vel_factor 		= 1.45;1.4
+PDM_disp_accel_factor 		= 1.45;1.4
 PDM_crouch	 				= 1.0
 PDM_crouch_no_acc 			= 1.0
 
@@ -92,25 +93,25 @@ shell_point		 			= 0.0, 0.186, 0.0
 shell_dir		 			= 0.0, 0.0, 0.4
 shell_particles	 			= weapons\generic_shells
 
-rpm_empty_click 	 		= 200
+;rpm_empty_click 	 		= 200
 
 ; ttc
-hit_power                	= 0.4, 0.44, 0.47, 0.50
-hit_impulse		 			= 140
+hit_power                	= 0.62;0.4, 0.44, 0.47, 0.50
+hit_impulse		 			= 1;140
 hit_type 					= fire_wound 	
 
-fire_distance            	= 800
-bullet_speed				= 950	;начальная скорость пули
+fire_distance            	= 1000;800
+bullet_speed				= 900;950	;начальная скорость пули
 rpm                      	= 650
 ; end ttc
 
 use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
-time_to_aim					= 1.0	
+time_to_aim					= 3.0;1.0	
 
-silencer_hit_power       	= 0.4
-silencer_hit_impulse	 	= 120
-silencer_fire_distance   	= 250
-silencer_bullet_speed	 	= 600
+silencer_hit_power       	= 0.62;0.4
+silencer_hit_impulse	 	= 1;120
+silencer_fire_distance   	= 1000;250
+silencer_bullet_speed	 	= 900;600
 
 hud                      	= wpn_l85_hud
 normal                   	= 0, 1, 0
@@ -125,7 +126,7 @@ strap_orientation      		= -10,-5,10					; (3rd person view in degrees)
 strap_bone0					= bip01_spine2
 strap_bone1					= bip01_spine1
 
-startup_ammo   		        = 90
+;startup_ammo   		        = 90
 visual         		        = weapons\l85\wpn_l85.ogf
 	
 light_color					= 0.6,0.5,0.3
@@ -134,7 +135,7 @@ light_var_color				= 0.05
 light_var_range				= 0.5
 light_time 					= 0.2
 
-ph_mass						= 5
+ph_mass						= 4.13;5
 ;cost						= 2100
 
 ;addons
@@ -143,7 +144,7 @@ silencer_status				= 0;2
 grenade_launcher_status		= 0;2
 
 zoom_enabled				= true
-scope_zoom_factor			= 30		;SUSAT 2X
+scope_zoom_factor			= 33.3;30		;SUSAT 2X
 scope_texture				= wpn\wpn_crosshair_l85
 
 scope_name 					= wpn_addon_scope
@@ -225,7 +226,7 @@ anim_shoot_gl				= shoot_with_gl
 ; zoom_rotate_x				= 0.000400
 ; zoom_rotate_y				= 0.017200
 ;прячем перекрестие прицела в зуме
-zoom_hide_crosshair	= true
+;zoom_hide_crosshair	= false
 
 ;тоже самое, но для прицепленого подствольника
 ;режим обычной стрельбы
