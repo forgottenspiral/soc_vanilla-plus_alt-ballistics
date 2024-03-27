@@ -21,13 +21,13 @@ holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
 
 cost					 	= 280
 
-ammo_limit		 			= 120
-ammo_current		 		= 96
+;ammo_limit		 			= 120
+;ammo_current		 		= 96
 ammo_elapsed		 		= 8
 
 ammo_mag_size		 		= 8;7
 ammo_class		 			= ammo_9x18_fmj, ammo_9x18_pmm
-
+fire_modes		 			= 1
 
 hand_dependence			 	= 1
 
@@ -51,21 +51,23 @@ kill_msg_height		= 23
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.4 	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 0.9;0.4 	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor	= 1.0f
 
 ;отдача
 cam_relax_speed         	= 8;1.0	;скорость возврата в исходное положение
-cam_dispersion          	= 0.4	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.0	;увеличениe cam_dispersion с каждым выстрелом
+cam_relax_speed_ai         	= 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.5;0.4	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.5;0.0	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispertion_frac		= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle			= 20.0	;максимальный угол отдачи
+cam_max_angle			= 5;20.0	;максимальный угол отдачи
 cam_max_angle_horz		= 5.0	;(degree) maximum shot horizontal degree 
 cam_step_angle_horz		= 1.0	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor= 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 		= 0.003	;вероятность осечки при максимальном износе 
+misfire_probability 		= 0.001;0.003	;вероятность осечки при максимальном износе 
 misfire_condition_k			= 0.05
-condition_shot_dec 			= 0.0003 ;увеличение износа при каждом выстреле
+condition_shot_dec 			= 0.0002;0.0003 ;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
 
 direction                	= 0, 0, 1
@@ -78,31 +80,31 @@ shell_point		 			= 0.00, 0.127, 0.03
 shell_dir		 			= 0.0, 0.0, 0.4
 shell_particles	 			= weapons\generic_shells
 
-rpm_empty_click 	 		= 100
+;rpm_empty_click 	 		= 100
 
 PDM_disp_base 			= 1.0
-PDM_disp_vel_factor 		= 0.7
-PDM_disp_accel_factor 		= 0.7
+PDM_disp_vel_factor 		= 0.2;0.7
+PDM_disp_accel_factor 		= 0.2;0.7
 PDM_crouch	 		= 1.0
 PDM_crouch_no_acc 		= 1.0
 
 ; ttc
-hit_power               = 0.30, 0.34, 0.37, 0.40
-hit_impulse		 		= 100
+hit_power               = 0.3;0.30, 0.34, 0.37, 0.40
+hit_impulse		 		= 1;100
 hit_type = fire_wound
 
-fire_distance           = 50 ;1000
-bullet_speed			= 300 ;290	;начальная скорость пули
-rpm                     = 260
+fire_distance           = 700;50 ;1000
+bullet_speed			= 315;300 ;290	;начальная скорость пули
+rpm                     = 250;260
 ; end ttc
 
 use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
 time_to_aim					= 1.0	
 
-silencer_hit_power       	= 0.30
-silencer_hit_impulse	 	= 80
-silencer_fire_distance   	= 100
-silencer_bullet_speed	 	= 220
+silencer_hit_power       	= 0.3;0.30
+silencer_hit_impulse	 	= 1;80
+silencer_fire_distance   	= 700;100
+silencer_bullet_speed	 	= 315;220
 
 hud                      	= wpn_pm_hud
 normal                   	= 0, 1, 0
@@ -124,7 +126,7 @@ light_var_color		 		= 0.05
 light_var_range		 		= 0.5
 light_time 		 			= 0.2
 
-ph_mass			 			= 1
+ph_mass			 			= 0.73;1
 ;cost			 			= 350
 
 ;addons
@@ -133,7 +135,7 @@ silencer_status				= 0;2
 grenade_launcher_status		= 0
 
 zoom_enabled				= true
-scope_zoom_factor	    	= 55
+scope_zoom_factor	    	= 75;55
 
 ;звуки
 snd_draw					= weapons\pm_draw
@@ -155,10 +157,10 @@ silencer_y 					= -15
 ;params when silencer is attached 
 ;similar to corresponding params without prefix silencer_
 
-silencer_hit_power       	= 35
-silencer_hit_impulse	 	= 60
-silencer_fire_distance   	= 100
-silencer_bullet_speed	 	= 220
+;silencer_hit_power       	= 35
+;silencer_hit_impulse	 	= 60
+;silencer_fire_distance   	= 100
+;silencer_bullet_speed	 	= 220
 ;silencer_flame_particles 	= weapons\generic_weapon01
 silencer_smoke_particles 	= weapons\generic_shoot_00
 snd_silncer_shot			= weapons\w_ak74_shot1 
@@ -195,5 +197,5 @@ zoom_offset			= -0.173300,0.056600,0.000000
 zoom_rotate_x		= -0.012000
 zoom_rotate_y		= -0.001000
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
 
