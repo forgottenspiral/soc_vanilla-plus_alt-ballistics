@@ -21,12 +21,13 @@ holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
 
 cost					 	= 800	;300
 
-ammo_limit		 			= 120
-ammo_current		 		= 96
+;ammo_limit		 			= 120
+;ammo_current		 		= 96
 ammo_elapsed		 		= 16
 
 ammo_mag_size		 		= 16
 ammo_class		 			= ammo_9x19_fmj, ammo_9x19_pbp 
+fire_modes		 			= 1
 
 hand_dependence		 		= 1
 single_handed				= 1
@@ -50,21 +51,23 @@ kill_msg_height		= 23
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.3 	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 0.8;0.3 	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor	= 1.0f
 
 ;отдача
-cam_relax_speed         	= 8.5	;скорость возврата в исходное положение
-cam_dispersion          	= 0.47	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.0	;увеличениe cam_dispersion с каждым выстрелом
+cam_relax_speed         	= 8;8.5	;скорость возврата в исходное положение
+cam_relax_speed_ai         	= 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.5;0.47	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.5;0.0	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispertion_frac		= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle			= 20.0	;максимальный угол отдачи
-cam_max_angle_horz		= 10.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz		= 0.7	;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle			= 5;20.0	;максимальный угол отдачи
+cam_max_angle_horz		= 5;10.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 0.5;0.7	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 	= 0.005	;вероятность осечки при максимальном износе 
+misfire_probability 	= 0.002;0.005	;вероятность осечки при максимальном износе 
 misfire_condition_k		= 0.05
-condition_shot_dec 		= 0.0003 ;увеличение износа при каждом выстреле
+condition_shot_dec 		= 0.0005;0.0003 ;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
 
 direction           	    = 0, 0, 1
@@ -76,31 +79,31 @@ shell_point		 			= 0.0, 0.136, 0.03
 shell_dir		 			= 0.0, 0.0, 0.4
 shell_particles	 			= weapons\generic_shells
 
-rpm_empty_click 	 		= 200
+;rpm_empty_click 	 		= 200
 
 PDM_disp_base 			= 1.0
-PDM_disp_vel_factor 		= 0.5
-PDM_disp_accel_factor 		= 0.5
+PDM_disp_vel_factor 		= 0.8;0.5
+PDM_disp_accel_factor 		= 0.8;0.5
 PDM_crouch	 		= 1.0
 PDM_crouch_no_acc 		= 1.0
 
 ; ttc
-hit_power           = 0.31, 0.35, 0.38, 0.41
-hit_impulse		 	= 125
+hit_power           = 0.39;0.31, 0.35, 0.38, 0.41
+hit_impulse		 	= 1;125
 hit_type 			= fire_wound	
 
-fire_distance           = 50 ;1000
-bullet_speed		 	= 300 ;280		
-rpm                     = 315
+fire_distance           = 700;50 ;1000
+bullet_speed		 	= 408;300 ;280		
+rpm                     = 300;315
 ; end ttc
 
 use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
 time_to_aim					= 1.0	
 
-silencer_hit_power       	= 0.37
-silencer_hit_impulse	 	= 105
-silencer_fire_distance   	= 100
-silencer_bullet_speed	 	= 280
+silencer_hit_power       	= 0.39;0.37
+silencer_hit_impulse	 	= 1;105
+silencer_fire_distance   	= 700;100
+silencer_bullet_speed	 	= 408;280
 
 hud                      	= wpn_walther_hud
 normal                   	= 0, 1, 0
@@ -122,7 +125,7 @@ light_var_color		 		= 0.05
 light_var_range		 		= 0.5
 light_time 		 			= 0.2
 
-ph_mass			 			= 1
+ph_mass			 			= 0.69;1
 ;cost			 			= 350
 
 ;addons
@@ -131,7 +134,7 @@ silencer_status				= 0;2							; 1 - permanent
 grenade_launcher_status		= 0							; 2 - attachable
 
 zoom_enabled				= true
-scope_zoom_factor	    	= 55
+scope_zoom_factor	    	= 75;55
 
 ;звуки
 snd_draw					= weapons\walther_draw
@@ -190,4 +193,4 @@ zoom_rotate_x		= -0.023000
 zoom_rotate_y		= 0.001800
 
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
