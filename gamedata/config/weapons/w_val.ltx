@@ -23,8 +23,8 @@ holder_fov_modifier		= 0.7              ; во сколько раз увеличивается eye_fov
 cost		 	 			= 9000	;2400
 weapon_class				= assault_rifle
 
-ammo_limit					= 210
-ammo_current				= 180
+;ammo_limit					= 210
+;ammo_current				= 180
 ammo_elapsed				= 20
 	
 ammo_mag_size				= 20
@@ -53,20 +53,21 @@ kill_msg_height		= 21
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.14	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor		= 1.04f
+fire_dispersion_base		= 0.5;0.14	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor		= 1.2f;1.04f
 
 ;отдача
-cam_relax_speed         	= 5	;скорость возврата в исходное положение
-cam_dispersion          	= 0.3	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.05	;увеличениe cam_dispersion с каждым выстрелом
-cam_dispertion_frac		= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle			= 7.0	;максимальный угол отдачи
-cam_max_angle_horz		= 10.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz		= 0.5;0.4	;(degree) size of step camera moved in horizontal position while shooting
+cam_relax_speed         	= 4;5	;скорость возврата в исходное положение
+cam_relax_speed_ai        = 360;120.75	;скорость возврата в исходное положение
+cam_dispersion          	= 0.45;0.3	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 0.45;0.05	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac		= 0.7;1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle			= 5;7.0	;максимальный угол отдачи
+cam_max_angle_horz		= 5;10.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 0.45;0.5;0.4	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 	= 0.003	;вероятность осечки при максимальном износе 
+misfire_probability 	= 0.002;0.003	;вероятность осечки при максимальном износе 
 misfire_condition_k		= 0.05
 condition_shot_dec 		= 0.0002 ;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
@@ -82,26 +83,26 @@ shell_point		 			= 0.0, 0.174, 0.078
 shell_dir		 			= 0.0, 1.0, 0.0
 shell_particles	 			= weapons\generic_shells
 
-rpm_empty_click 			= 200
+;rpm_empty_click 			= 200
 
 PDM_disp_base 			= 1.0
-PDM_disp_vel_factor 		= 1.2
-PDM_disp_accel_factor 		= 1.2
+PDM_disp_vel_factor 		= 1.5;1.2
+PDM_disp_accel_factor 		= 1.5;1.2
 PDM_crouch	 		= 1.0
 PDM_crouch_no_acc 		= 1.0
 
 ; ttc
-hit_power        	= 0.58, 0.62, 0.65, 0.68
-hit_impulse		 	= 87
+hit_power        	= 0.78;0.58, 0.62, 0.65, 0.68
+hit_impulse		 	= 1;87
 hit_type 			= fire_wound
 
-fire_distance   	    = 400 ;1000
-bullet_speed			= 290	;начальная скорость пули
-rpm             		= 650 ;800
+fire_distance   	    = 1000;400 ;1000
+bullet_speed			= 295;290	;начальная скорость пули
+rpm             		= 900;650 ;800
 ; end ttc
 
 use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
-time_to_aim					= 1.0	
+time_to_aim					= 3.0;1.0	
 
 hud             	        = wpn_val_hud
 normal          	        = 0, 1, 0
@@ -117,12 +118,12 @@ strap_orientation      		= -15,-9,110				; (3rd person view in degrees)
 strap_bone0					= bip01_spine2
 strap_bone1					= bip01_spine1
 
-startup_ammo    	        = 90
+;startup_ammo    	        = 90
 visual          	        = weapons\val\wpn_val.ogf
 
 light_disabled				= true
 
-ph_mass			 			= 5
+ph_mass			 			= 2.5;5
 ;cost			 			= 2100
 
 ;addons
@@ -131,7 +132,7 @@ silencer_status				= 1
 grenade_launcher_status		= 0
 
 zoom_enabled				= true
-scope_zoom_factor		    = 50
+scope_zoom_factor		    = 75;50
 scope_name 					= wpn_addon_scope
 scope_texture				= wpn\wpn_crosshair
 scope_x 					= 37						; offset in inventory icon
@@ -171,4 +172,4 @@ zoom_offset			= -0.099900,0.044200,-0.000700
 zoom_rotate_x		= 0.003700
 zoom_rotate_y		= -0.000700
 
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
