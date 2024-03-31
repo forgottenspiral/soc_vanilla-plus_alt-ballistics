@@ -20,13 +20,13 @@ holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
 
 cost					 	= 500
 
-ammo_limit		 			= 120
-ammo_current		 		= 0
+;ammo_limit		 			= 120
+;ammo_current		 		= 0
 ammo_elapsed		 		= 0
 
 ammo_mag_size		 		= 13
 ammo_class		 			= ammo_9x19_fmj, ammo_9x19_pbp
-
+fire_modes		 			= 1
 
 hand_dependence		 		= 1
 single_handed				= 1
@@ -50,20 +50,23 @@ kill_msg_height		= 23
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.27 		;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 0.8;0.27 		;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor	= 1.0f
 
 ;отдача
-cam_relax_speed         	= 8.2;1.2	;скорость возврата в исходное положение
+cam_relax_speed         	= 8;8.2;1.2	;скорость возврата в исходное положение
+cam_relax_speed_ai        = 360;120.75	;скорость возврата в исходное положение
 cam_dispersion          	= 0.6	;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc		= 0.0	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_inc		= 0.6;0.0	;увеличениe cam_dispersion с каждым выстрелом
 cam_dispertion_frac		= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
-cam_max_angle			= 20.0	;максимальный угол отдачи
-cam_max_angle_horz		= 10.0	;(degree) maximum shot horizontal degree 
-cam_step_angle_horz		= 1.2	;(degree) size of step camera moved in horizontal position while shooting
+cam_max_angle			= 5;20.0	;максимальный угол отдачи
+cam_max_angle_horz		= 5;10.0	;(degree) maximum shot horizontal degree 
+cam_step_angle_horz		= 1;1.2	;(degree) size of step camera moved in horizontal position while shooting
 
 fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
-misfire_probability 		= 0.005	    ;вероятность осечки при максимальном износе 
-condition_shot_dec 		= 0.00043	;увеличение износа при каждом выстреле
+misfire_probability 		= 0.005	    ;вероятность осечки при максимальном износе
+misfire_condition_k			= 0.05	; forgottenspiral: missing by default
+condition_shot_dec 		= 0.001;0.00043	;увеличение износа при каждом выстреле
 ;-----------------------------------------------------------------------------------
 
 direction                	= 0, 0, 1
@@ -75,7 +78,7 @@ smoke_particles		   		= weapons\generic_shoot_00
 shell_point		 			= 0.0, 0.129, 0.05
 shell_dir		 			= 0.0, 0.0, 0.4
 shell_particles	 			= weapons\generic_shells
-rpm_empty_click 	 		= 200
+;rpm_empty_click 	 		= 200
 
 PDM_disp_base 			= 1.0
 PDM_disp_vel_factor 		= 0.8
@@ -84,22 +87,22 @@ PDM_crouch	 		= 1.0
 PDM_crouch_no_acc 		= 1.0
 
 ; ttc
-hit_power                	= 0.70
-hit_impulse		 	= 125
+hit_power                	= 0.4;0.70
+hit_impulse		 	= 1;125
 hit_type 			= fire_wound
-fire_distance            	= 1000
+fire_distance            	= 700;1000
 
-bullet_speed			= 355		;начальная скорость пули
-rpm                      	= 240
+bullet_speed			= 335;355		;начальная скорость пули
+rpm                      	= 250;240
 ; end ttc
 
 use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
 time_to_aim					= 1.0	
 
-silencer_hit_power       	= 0.70
-silencer_hit_impulse	 	= 60
-silencer_fire_distance   	= 100
-silencer_bullet_speed	 	= 230
+silencer_hit_power       	= 0.4;0.70
+silencer_hit_impulse	 	= 1;60
+silencer_fire_distance   	= 700;100
+silencer_bullet_speed	 	= 335;230
 
 hud                      	= wpn_hpsa_hud
 normal                   	= 0, 1, 0
@@ -112,7 +115,7 @@ orientation              	= 0, 0, 0
 ;strap_bone0					= bip01_spine2
 ;strap_bone1					= bip01_spine1
 
-startup_ammo             	= 90
+;startup_ammo             	= 90
 visual                   	= weapons\hpsa\wpn_hpsa.ogf
 
 light_color		 			= 0.6,0.5,0.3
@@ -121,7 +124,7 @@ light_var_color		 		= 0.05
 light_var_range		 		= 0.5
 light_time 		 			= 0.2
 
-ph_mass			 			= 1
+ph_mass			 			= 0.88;1
 ;cost			 			= 450
 
 ;addons
@@ -130,7 +133,7 @@ silencer_status				= 0;2
 grenade_launcher_status		= 0
 
 zoom_enabled				= true
-scope_zoom_factor	    	= 55
+scope_zoom_factor	    	= 75;55
 
 ;звуки
 snd_draw					= weapons\pm_draw
@@ -162,7 +165,7 @@ silencer_light_var_range	= 0.5
 silencer_light_time 		= 0.2
  
 [wpn_hpsa_hud]
-
+;TODO: Complete HUD integration and shooting animations
 shell_point			= -0.425000,-0.005000,0.060000
 shell_dir		 			= 0.0, 1.0, 0.0
 
@@ -191,3 +194,4 @@ zoom_offset			= -0.148200,0.073200,-0.125300
 zoom_rotate_x		= 0.009100
 zoom_rotate_y		= 0.001500
 
+;zoom_hide_crosshair	= false						;to hide crosshair in zoom 
