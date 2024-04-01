@@ -323,7 +323,7 @@ bip01_r_calf	 	 		= 1.0, 0.03
 bip01_r_foot	 	 		= 1.0, 0.06
 bip01_r_toe0	 	 		= 1.0, 0.06
 
-[military_light_damage]
+[military_light_damage];between stalker suit and berill
 bip01_pelvis 				= 1.0, 0.1
 bip01_spine 		 		= 1.0, 0.2
 bip01_spine1 		 		= 1.0, 0.2
@@ -499,7 +499,7 @@ bip01_r_calf	 	 		= 1.0, 0.02
 bip01_r_foot	 	 		= 1.0, 0.05
 bip01_r_toe0	 	 		= 1.0, 0.05
 
-[bandit_trenchcoat_damage]
+[bandit_trenchcoat_damage];slightly better than leather jacket
 bip01_pelvis 				= 1.0, 0.03
 bip01_spine 		 		= 1.0, 0.08
 bip01_spine1 		 		= 1.0, 0.08
@@ -543,7 +543,7 @@ bip01_r_calf	 	 		= 1.0, 0.02
 bip01_r_foot	 	 		= 1.0, 0.05
 bip01_r_toe0	 	 		= 1.0, 0.05
 
-[merc_suit_damage]
+[merc_suit_damage];between mono light suit and berill
 bip01_pelvis 				= 1.0, 0.1
 bip01_spine 		 		= 1.0, 0.25
 bip01_spine1 		 		= 1.0, 0.25
@@ -587,7 +587,7 @@ bip01_r_calf	 	 		= 1.0, 0.02
 bip01_r_foot	 	 		= 1.0, 0.05
 bip01_r_toe0	 	 		= 1.0, 0.05
 
-[mono_light_damage]
+[mono_light_damage];slightly better than freedom light suit
 bip01_pelvis 				= 1.0, 0.1
 bip01_spine 		 		= 1.0, 0.2
 bip01_spine1 		 		= 1.0, 0.2
@@ -631,7 +631,7 @@ bip01_r_calf	 	 		= 1.0, 0.02
 bip01_r_foot	 	 		= 1.0, 0.05
 bip01_r_toe0	 	 		= 1.0, 0.05
 
-[freedom_light_damage]
+[freedom_light_damage];slightly better than stalker suit
 bip01_pelvis 				= 1.0, 0.08
 bip01_spine 		 		= 1.0, 0.15
 bip01_spine1 		 		= 1.0, 0.15
@@ -675,7 +675,7 @@ bip01_r_calf	 	 		= 1.0, 0.02
 bip01_r_foot	 	 		= 1.0, 0.05
 bip01_r_toe0	 	 		= 1.0, 0.05
 
-[freedom_heavy_damage]
+[freedom_heavy_damage];exactly as berill
 bip01_pelvis 				= 1.0, 0.2
 bip01_spine 		 		= 1.0, 0.3
 bip01_spine1 		 		= 1.0, 0.3
@@ -719,7 +719,7 @@ bip01_r_calf	 	 		= 1.0, 0.03
 bip01_r_foot	 	 		= 1.0, 0.06
 bip01_r_toe0	 	 		= 1.0, 0.06
 
-[duty_light_damage]
+[duty_light_damage];exactly as freedom light
 bip01_pelvis 				= 1.0, 0.08
 bip01_spine 		 		= 1.0, 0.15
 bip01_spine1 		 		= 1.0, 0.15
@@ -763,7 +763,7 @@ bip01_r_calf	 	 		= 1.0, 0.02
 bip01_r_foot	 	 		= 1.0, 0.05
 bip01_r_toe0	 	 		= 1.0, 0.05
 
-[duty_heavy_damage]
+[duty_heavy_damage];right between berill and mili specops
 bip01_pelvis 				= 1.0, 0.25
 bip01_spine 		 		= 1.0, 0.45
 bip01_spine1 		 		= 1.0, 0.45
@@ -851,7 +851,7 @@ bip01_r_calf	 	 		= 1.0, 0.35
 bip01_r_foot	 	 		= 1.0, 0.3
 bip01_r_toe0	 	 		= 1.0, 0.3
 
-[rad_exo_damage]
+[rad_exo_damage];a bit inferior to exo
 bip01_pelvis 				= 1.0, 0.4
 bip01_spine 		 		= 1.0, 0.6
 bip01_spine1 		 		= 1.0, 0.6
@@ -1651,29 +1651,29 @@ hit_fraction = 0.3;0.2
 hit_fraction = 0.3;0.2
 
 ;***************************************************************
-; ACTOR FULL SECTIONS
+; ALTBAL ACTOR FULL SECTIONS
 ;***************************************************************
 [actor_armor_none]:actor_damage_0
 
-[actor_armor_suit]:actor_damage_1
+[actor_armor_suit]:actor_damage_1;novice_outfit,bandit_outfit,outfit_bandit_m1
 
 [actor_armor_suit_1]:actor_damage_2
 
-[actor_light_armor]:actor_damage_2
-
-[actor_light_armor_1]:actor_damage_3
+[actor_light_armor]:actor_damage_2;killer_outfit,monolit_outfit,stalker_outfit, svoboda_light_outfit,
+																	;svoboda_heavy_outfit,dolg_outfit,ecolog_outfit,soldier_outfit,outfit_killer_m1
+[actor_light_armor_1]:actor_damage_3;scientific_outfit,dolg_scientific_outfit,protection_outfit
 
 [actor_light_armor_2]:actor_damage_4
 
-[actor_medium_armor]:actor_damage_4
+[actor_medium_armor]:actor_damage_4;specops_outfit
 
 [actor_medium_armor_1]:actor_damage_5
 
 [actor_medium_armor_2]:actor_damage_6
 
-[actor_heavy_armor]:actor_damage_6
+[actor_heavy_armor]:actor_damage_6;military_outfit,military_stalker_outfit,military_commander_outfit
 
-[actor_heavy_armor_1]:actor_damage_7
+[actor_heavy_armor_1]:actor_damage_7;exo_outfit
 
 [actor_heavy_armor_2]:actor_damage_8
 
