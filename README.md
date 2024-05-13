@@ -8,6 +8,7 @@ This repository provides the Alternative Ballistics Core addon for the Shadow of
 - AI Behavior and Accuracy: Adjusted AI behavior and accuracy complement the new ballistics system.
 - Damage System: Modified damage inflicted by weapons on the player and NPCs (mutants addressed in future updates).
 - Vanilla Player Attributes: Maintains player attribute adjustments from the mini-repack for a consistent experience.
+- Player Protection: Bullet protection across difficulty levels with Clear Sky's values to make gameplay more balanced.
 
 **Difficulty Options:**
 

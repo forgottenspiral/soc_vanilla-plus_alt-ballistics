@@ -1,5 +1,18 @@
 # Changelog
 
+v0.2 - 05/13/2024
+
+- Enhanced Iron Sight Visuals (w_ak74.ltx):
+  - Reverted adjustments to zoom_offset, grenade_normal_zoom_offset, and grenade_zoom_offset to improve visual consistency when aiming with iron sights and the reduced zoom effect.
+  - Increased scope_zoom_factor to 75 to match other iron sight weapons, ensuring a consistent visual experience.
+- Balanced Player Protection (actor.ltx):
+  - Aligned fire_wound_immunity values across difficulty levels with Clear Sky's values for a more balanced gameplay experience.
+  - Increased player bullet protection:
+    - [actor_immunities_gd_novice]: 0.5 -> 0.1
+    - [actor_immunities_gd_stalker]: 0.65 -> 0.2
+    - [actor_immunities_gd_veteran]: 0.8 -> 0.4
+    - [actor_immunities_gd_master]: 1.0 -> 0.6
+
 v0.1 - 04/06/2024
 
 - Gameplay Adjustments:
